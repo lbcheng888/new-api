@@ -13,6 +13,8 @@ import (
 	"one-api/model"
 	"one-api/router"
 	"one-api/service"
+	"one-api/setting/operation_setting"
+
 	// "one-api/setting/operation_setting" // Removed as it's no longer used directly
 	"os"
 	"strconv"
@@ -90,13 +92,8 @@ func main() {
 		common.FatalLog("failed to initialize Redis: " + err.Error())
 	}
 
-<<<<<<< HEAD
 	// Initialize model settings
 	operation_setting.InitRatioSettings()
-=======
-	// Model settings (ratios, prices) are initialized lazily on first access.
-	// No explicit initialization needed here anymore.
->>>>>>> 6ab83975 (update main.go)
 	// Initialize constants
 	constant.InitEnv()
 	// Initialize options
